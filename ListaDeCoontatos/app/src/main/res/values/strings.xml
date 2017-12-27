@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ListaDeCoontatos</string>
+    
+    <string-array name="contatos">
+        <item>"Aline"</item>
+        <item>"Lucas"</item>
+        <item>"Rafael"</item>
+        <item>"Genilton"</item>
+        <item>"Cleiton"</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Jogo Advinhacao</string>
+    <string name="btn_number_guess_game">Advinhar os números</string>
+</resources>
