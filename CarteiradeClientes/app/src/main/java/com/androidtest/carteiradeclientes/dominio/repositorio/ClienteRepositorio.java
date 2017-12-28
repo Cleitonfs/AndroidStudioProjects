@@ -110,7 +110,7 @@ public class ClienteRepositorio {
 
             cliente.cod = resultado.getInt( resultado.getColumnIndexOrThrow("CODIGO") );
             cliente.nome = resultado.getString( resultado.getColumnIndexOrThrow("NOME") );
-            cliente.endereco = resultado.getString( resultado.getColumnIndexOrThrow("ENRECO") );
+            cliente.endereco = resultado.getString( resultado.getColumnIndexOrThrow("ENDERECO") );
             cliente.email = resultado.getString( resultado.getColumnIndexOrThrow("EMAIL") );
             cliente.telefone = resultado.getString( resultado.getColumnIndexOrThrow("TELEFONE") );
 
