@@ -63,11 +63,10 @@ public class ClienteRepositorio {
         List<Cliente> clientes = new ArrayList<Cliente>();
 
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT CODIGO, NOME, ENDERECO, EMAIL, TELEFONE ");
-        sql.append("FROM CLIENTE");
+        sql.append(" SELECT CODIGO, NOME, ENDERECO, EMAIL, TELEFONE ");
+        sql.append(" FROM CLIENTE ");
 
         Cursor resultado = conexao.rawQuery(sql.toString(), null);
-
 
         if (resultado.getCount() > 0) {
             resultado.moveToFirst();
@@ -78,7 +77,7 @@ public class ClienteRepositorio {
 
                 clienteTemp.cod = resultado.getInt( resultado.getColumnIndexOrThrow("CODIGO") );
                 clienteTemp.nome = resultado.getString( resultado.getColumnIndexOrThrow("NOME") );
-                clienteTemp.endereco = resultado.getString( resultado.getColumnIndexOrThrow("ENRECO") );
+                clienteTemp.endereco = resultado.getString( resultado.getColumnIndexOrThrow("ENDERECO") );
                 clienteTemp.email = resultado.getString( resultado.getColumnIndexOrThrow("EMAIL") );
                 clienteTemp.telefone = resultado.getString( resultado.getColumnIndexOrThrow("TELEFONE") );
 

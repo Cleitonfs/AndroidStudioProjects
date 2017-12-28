@@ -9,11 +9,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.androidtest.carteiradeclientes.database.DadosOpenHelper;
+import com.androidtest.carteiradeclientes.dominio.entidades.Cliente;
+import com.androidtest.carteiradeclientes.dominio.repositorio.ClienteRepositorio;
+
+import java.util.List;
 
 public class ActMain extends AppCompatActivity {
 
@@ -24,6 +29,11 @@ public class ActMain extends AppCompatActivity {
     private SQLiteDatabase conexao;
 
     private DadosOpenHelper dadosOpenHelper;
+
+    private ClienteAdapter clienteAdapter;
+
+    private ClienteRepositorio clienteRepositorio;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +47,25 @@ public class ActMain extends AppCompatActivity {
         layoutContentMain = (ConstraintLayout) findViewById(R.id.layoutContentMain);
 
         criarConexao();
+        //Escolhendo o tipo de Layoutmanager
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        //vinculando o tipo de layoutmanager ao RecycleView
+        lstDados.setLayoutManager(linearLayoutManager);
+
+        //Instanciando clienteRepositorio para poder utilizar o metodo buscarTodos()
+        clienteRepositorio = new ClienteRepositorio(conexao);
+
+        //Buscando dados na base
+        List<Cliente> dados = clienteRepositorio.buscarTodos();
+
+        //Criando adaptador que recebe como parâmetro uma lista de dados
+        clienteAdapter = new ClienteAdapter(dados);
+
+
+        //Conecatando o Adaptet ao RecycleView
+        lstDados.setAdapter(clienteAdapter);
+
+
 
     }
     private void criarConexao(){
