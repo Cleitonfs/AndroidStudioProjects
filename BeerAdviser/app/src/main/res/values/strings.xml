@@ -4,10 +4,6 @@
     <string name="brands">Nenhuma cerveja selecionada</string>
     <string-array name="beer_color">
         <item>Lager</item>
-        <item>Pilsen</item>
         <item>Ale</item>
-        <item>Bock</item>
-        <item>Weissbier</item>
-        <item>Bubbel</item>
     </string-array>
 </resources>
