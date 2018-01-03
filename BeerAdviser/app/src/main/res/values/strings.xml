@@ -4,6 +4,6 @@
     <string name="brands">Nenhuma cerveja selecionada</string>
     <string-array name="beer_color">
         <item>Lager</item>
-        <item>Ale</item>
+        <item>Pilsen</item>
     </string-array>
 </resources>

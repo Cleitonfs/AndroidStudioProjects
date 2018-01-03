@@ -12,11 +12,11 @@ public class BeerExpert {
     List<String> getBrands(String color) {
         List<String> brands = new ArrayList<>();
         if (color.equals("Lager")) {
-            brands.add("Cerveja 1");
-            brands.add("Cerveja 2");
+            brands.add("BUDWEISER");
+            brands.add("STELLA ARTOIS");
         } else {
-            brands.add("Cerveja 3");
-            brands.add("Cerveja 4");
+            brands.add("ANTARCTICA");
+            brands.add("SKOL");
         }
         return brands;
     }
