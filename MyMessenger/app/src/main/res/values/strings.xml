@@ -2,5 +2,6 @@
     <string name="app_name">My Messenger</string>
     <string name="send">Send Message</string>
     <string name="hint">Enter your message</string>
+    <string name="chooser">Carol, please send message via...</string>
 
 </resources>
