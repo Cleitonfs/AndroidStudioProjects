@@ -12,6 +12,7 @@ public class StopwatchActivity extends Activity {
 
     private boolean running;
     private int seconds = 0;
+    private boolean wasRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,10 @@ public class StopwatchActivity extends Activity {
         if (savedInstanceState != null) {
             seconds = savedInstanceState.getInt("seconds");
             running = savedInstanceState.getBoolean("running");
+<<<<<<< HEAD
+=======
+            wasRunning = savedInstanceState.getBoolean("wasRunning");
+>>>>>>> develop
         }
 
         runTimmer();
@@ -30,6 +35,10 @@ public class StopwatchActivity extends Activity {
     public void onSaveInstanceState(Bundle savedInstaceState){
         savedInstaceState.putInt("seconds", seconds);
         savedInstaceState.putBoolean("running", running);
+<<<<<<< HEAD
+=======
+        savedInstaceState.putBoolean("wasRunning", wasRunning);
+>>>>>>> develop
     }
 
     public void onClickStart(View view) {
@@ -46,6 +55,20 @@ public class StopwatchActivity extends Activity {
 
         running = false;
         seconds = 0;
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        wasRunning = running;
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        if (wasRunning){
+            running = true;
+        }
     }
 
     private void runTimmer() {
