@@ -1,4 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'pmd'
+apply from:"$project.rootDir/script-pmd.gradle"
+
+check.dependsOn 'checkstyle', 'findbugs', 'pmd'
 
 android {
     compileSdkVersion 26
