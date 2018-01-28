@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActCadContatos"></activity>
+        <activity android:name=".ActCadContatos" android:label="Contatos"></activity>
     </application>
 
 </manifest>

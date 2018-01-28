@@ -6,5 +6,7 @@
     <string name="lbl_endereço">Endereço</string>
     <string name="lbl_datas_especiais">Datas especiais</string>
     <string name="lbl_grupos">Grupos</string>
+    <string name="lbl_salvar">Salvar</string>
+    <string name="lbl_exlcluir">Excluir</string>
 
 </resources>
